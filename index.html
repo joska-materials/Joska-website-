@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joska Building Materials — Stone, Ballast, Sand &amp; Dust Supply</title>
+<meta name="description" content="Joska Building Materials supplies stones, ballast, sand, soft stone and dust for construction sites, contractors and builders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --quarry:      #24211D;
+    --quarry-2:    #34302A;
+    --stone:       #A79D8C;
+    --paper:       #EEE8DC;
+    --dust-gold:   #C69657;
+    --rust:        #B04A2A;
+    --line:        rgba(238,232,220,0.14);
+    --line-dark:   rgba(36,33,29,0.12);
+  }
+
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; }
+
+  body{
+    background: var(--paper);
+    color: var(--quarry);
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  h1,h2,h3 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.02em; }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; }
+
+  a { color: inherit; }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== HEADER ===== */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1180px; margin: 0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px;
+  }
+  .brand-mark{
+    width: 34px; height: 34px;
+    background: var(--rust);
+    display:grid; place-items:center;
+    transform: rotate(45deg);
+    flex-shrink:0;
+  }
+  .brand-mark span{
+    transform: rotate(-45deg);
+    font-family:'Archivo Black', sans-serif;
+    color: var(--paper);
+    font-size: 15px;
+  }
+  .brand-name{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+  }
+  .brand-name small{
+    display:block;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--stone);
+    margin-top: 2px;
+  }
+  nav.links{ display:flex; gap: 28px; }
+  nav.links a{
+    text-decoration:none;
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color .15s ease;
+  }
+  nav.links a:hover{ border-color: var(--rust); }
+  .nav-cta{
+    background: var(--quarry);
+    color: var(--paper) !important;
+    padding: 10px 18px;
+    text-decoration:none;
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: 14.5px;
+    border: 2px solid transparent;
+  }
+  .nav-cta:hover{ background: var(--rust); }
+
+  /* ===== HERO ===== */
+  .hero{
+    background: var(--quarry);
+    color: var(--paper);
+    padding: 88px 0 0 0;
+    overflow: hidden;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12.5px;
+    color: var(--dust-gold);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before{
+    content:''; width: 26px; height: 1px; background: var(--dust-gold);
+  }
+  .hero h1{
+    font-size: clamp(44px, 6vw, 74px);
+    line-height: 0.98;
+    font-weight: 700;
+  }
+  .hero h1 em{
+    font-style: normal;
+    color: var(--dust-gold);
+  }
+  .hero p.lede{
+    font-family:'Barlow', sans-serif;
+    text-transform:none;
+    font-size: 18px;
+    color: var(--stone);
+    max-width: 46ch;
+    margin-top: 22px;
+  }
+  .hero-actions{
+    margin-top: 34px;
+    display:flex; gap: 16px; flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding: 15px 26px;
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: 15.5px;
+    text-decoration:none;
+    border: 2px solid var(--dust-gold);
+  }
+  .btn.solid{ background: var(--dust-gold); color: var(--quarry); }
+  .btn.solid:hover{ background: var(--paper); border-color: var(--paper); }
+  .btn.ghost{ color: var(--paper); border-color: var(--line); }
+  .btn.ghost:hover{ border-color: var(--paper); }
+
+  /* signature: particle stack */
+  .stack{
+    position: relative;
+    height: 460px;
+    display:flex; align-items:flex-end; justify-content: center;
+  }
+  .stack-col{
+    width: 100%;
+    display:flex; flex-direction:column; gap: 3px;
+  }
+  .stack-row{
+    display:flex; align-items:center; gap: 14px;
+  }
+  .stack-row .label{
+    width: 92px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    text-transform:uppercase;
+    letter-spacing: 0.08em;
+    color: var(--stone);
+    text-align:right;
+    flex-shrink:0;
+  }
+  .grain-track{
+    flex:1;
+    height: 46px;
+    background: var(--quarry-2);
+    border: 1px solid var(--line);
+    display:flex; align-items:center;
+    padding: 0 14px;
+    gap: 8px;
+    overflow:hidden;
+  }
+  .grain-track .grains{ display:flex; align-items:center; gap:7px; }
+  .g{ border-radius: 50%; background: var(--dust-gold); flex-shrink:0; }
+
+  /* ===== SECTION HEADERS ===== */
+  .section{ padding: 96px 0; }
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap: 24px;
+    margin-bottom: 52px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .section-head .num{
+    font-family:'JetBrains Mono', monospace;
+    color: var(--rust);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    display:block;
+  }
+  .section-head h2{ font-size: clamp(30px,4vw,44px); }
+  .section-head p{
+    text-transform:none;
+    font-family:'Barlow', sans-serif;
+    color: var(--quarry-2);
+    max-width: 34ch;
+    font-size: 15.5px;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+  }
+  .pcard{
+    background: var(--paper);
+    padding: 34px 28px 28px;
+    position:relative;
+    transition: background .18s ease;
+  }
+  .pcard:hover{ background: #E4DCC9; }
+  .pcard .idx{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.08em;
+  }
+  .swatch{
+    width: 100%;
+    height: 108px;
+    margin: 18px 0 20px;
+    position: relative;
+    border: 1px solid var(--line-dark);
+    background: var(--quarry);
+    overflow:hidden;
+  }
+  .pcard h3{
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .pcard .use{
+    font-family:'Barlow', sans-serif;
+    text-transform: none;
+    font-size: 14.5px;
+    color: var(--quarry-2);
+    margin-bottom: 14px;
+  }
+  .spec{
+    display:flex; justify-content:space-between;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform:uppercase;
+    letter-spacing: 0.05em;
+    color: var(--stone);
+    border-top: 1px dashed var(--line-dark);
+    padding-top: 10px;
+  }
+
+  /* swatch textures */
+  .tex-stones{ background:
+    radial-gradient(circle at 20% 30%, #6b6558 0 14px, transparent 15px),
+    radial-gradient(circle at 55% 60%, #83795f 0 18px, transparent 19px),
+    radial-gradient(circle at 80% 25%, #5c5648 0 12px, transparent 13px),
+    radial-gradient(circle at 35% 85%, #756c56 0 16px, transparent 17px),
+    radial-gradient(circle at 90% 75%, #6b6558 0 13px, transparent 14px),
+    var(--quarry);
+  }
+  .tex-ballast{ background:
+    radial-gradient(circle at 12% 20%, #857a5f 0 8px, transparent 9px),
+    radial-gradient(circle at 30% 60%, #6f6650 0 7px, transparent 8px),
+    radial-gradient(circle at 50% 30%, #948862 0 9px, transparent 10px),
+    radial-gradient(circle at 68% 70%, #756c50 0 6px, transparent 7px),
+    radial-gradient(circle at 82% 35%, #857a5f 0 8px, transparent 9px),
+    radial-gradient(circle at 20% 85%, #6f6650 0 7px, transparent 8px),
+    radial-gradient(circle at 92% 80%, #948862 0 6px, transparent 7px),
+    radial-gradient(circle at 45% 90%, #756c50 0 7px, transparent 8px),
+    var(--quarry-2);
+  }
+  .tex-sand{ background:
+    repeating-linear-gradient(100deg, #C69657 0 2px, #B8894C 2px 4px),
+    var(--dust-gold);
+    background-size: auto, cover;
+  }
+  .tex-softstone{ background:
+    linear-gradient(160deg, #9C9280 0%, #B0A48A 45%, #8C8270 100%);
+  }
+  .tex-softstone::after{
+    content:'';
+    position:absolute; inset:0;
+    background: repeating-linear-gradient(35deg, rgba(36,33,29,0.06) 0 3px, transparent 3px 9px);
+  }
+  .tex-dust{ background: radial-gradient(ellipse at center, #D8C6A3 0%, #C9A46A 70%, #BB934F 100%); }
+  .tex-dust::after{
+    content:'';
+    position:absolute; inset:0;
+    background-image: radial-gradient(rgba(36,33,29,0.10) 1px, transparent 1px);
+    background-size: 6px 6px;
+  }
+
+  /* ===== ABOUT / STRIP ===== */
+  .strip{
+    background: var(--quarry);
+    color: var(--paper);
+    padding: 64px 0;
+  }
+  .strip-inner{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  .strip-item .n{
+    font-family:'Archivo Black', sans-serif;
+    font-size: 40px;
+    color: var(--dust-gold);
+  }
+  .strip-item .l{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--stone);
+    margin-top: 6px;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .steps{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .step{
+    border-top: 3px solid var(--rust);
+    padding-top: 20px;
+  }
+  .step .sn{
+    font-family:'JetBrains Mono', monospace;
+    color: var(--rust);
+    font-size: 13px;
+  }
+  .step h3{ font-size: 22px; margin: 10px 0 8px; }
+  .step p{ text-transform:none; font-size: 15px; color: var(--quarry-2); }
+
+  /* ===== CONTACT ===== */
+  .contact{
+    background: var(--quarry-2);
+    color: var(--paper);
+  }
+  .contact-inner{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .contact h2{ font-size: clamp(30px,4vw,44px); margin-bottom: 16px; }
+  .contact p.lede{
+    text-transform:none; font-family:'Barlow',sans-serif;
+    color: var(--stone); max-width: 42ch; font-size: 16px; margin-bottom: 30px;
+  }
+  .contact-row{
+    display:flex; gap:16px; padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-row .k{
+    width: 110px; flex-shrink:0;
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase; font-size: 11.5px;
+    letter-spacing: 0.08em; color: var(--dust-gold);
+    padding-top: 2px;
+  }
+  .contact-row .v{ font-size: 16px; }
+  .contact-row .v small{ display:block; color: var(--stone); font-size: 13px; margin-top:2px; }
+
+  form{ display:flex; flex-direction:column; gap: 16px; }
+  form label{
+    font-family:'JetBrains Mono', monospace;
+    text-transform:uppercase; font-size: 11px;
+    letter-spacing: 0.08em; color: var(--stone);
+    margin-bottom: 6px; display:block;
+  }
+  form input, form select, form textarea{
+    width:100%;
+    background: var(--quarry);
+    border: 1px solid var(--line);
+    color: var(--paper);
+    padding: 13px 14px;
+    font-family:'Barlow', sans-serif;
+    font-size: 15px;
+  }
+  form input:focus, form select:focus, form textarea:focus{
+    outline: 2px solid var(--dust-gold);
+    outline-offset: 1px;
+    border-color: var(--dust-gold);
+  }
+  form textarea{ resize: vertical; min-height: 90px; }
+  form button{
+    margin-top: 6px;
+    background: var(--rust);
+    color: var(--paper);
+    border: none;
+    padding: 15px 20px;
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: 15.5px;
+    cursor: pointer;
+  }
+  form button:hover{ background: var(--dust-gold); color: var(--quarry); }
+  .edit-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--stone);
+    margin-top: 10px;
+  }
+
+  footer{
+    background: var(--quarry);
+    color: var(--stone);
+    padding: 28px 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; }
+
+  @media (max-width: 860px){
+    nav.links{ display:none; }
+    .hero-inner{ grid-template-columns: 1fr; }
+    .stack{ height: 300px; margin-top: 30px; }
+    .products{ grid-template-columns: 1fr; }
+    .strip-inner{ grid-template-columns: repeat(2,1fr); gap:28px; }
+    .steps{ grid-template-columns: 1fr; }
+    .contact-inner{ grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    * { transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="brand-mark"><span>J</span></div>
+      <div class="brand-name">JOSKA<small>Building Materials</small></div>
+    </div>
+    <nav class="links">
+      <a href="#materials">Materials</a>
+      <a href="#process">How it works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Request a quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Quarry-direct supply</div>
+      <h1>Stone, sand<br>&amp; <em>ballast</em>,<br>by the ton.</h1>
+      <p class="lede">Joska Building Materials supplies stones, ballast, sand, soft stone and dust straight to your site — reliable grading, honest measure, delivery you can schedule around.</p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#contact">Request a quote</a>
+        <a class="btn ghost" href="#materials">View materials</a>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="stack-col">
+        <div class="stack-row">
+          <div class="label">Stones</div>
+          <div class="grain-track"><div class="grains">
+            <div class="g" style="width:30px;height:30px"></div>
+            <div class="g" style="width:24px;height:24px"></div>
+            <div class="g" style="width:28px;height:28px"></div>
+            <div class="g" style="width:22px;height:22px"></div>
+          </div></div>
+        </div>
+        <div class="stack-row">
+          <div class="label">Ballast</div>
+          <div class="grain-track"><div class="grains">
+            <div class="g" style="width:14px;height:14px"></div>
+            <div class="g" style="width:11px;height:11px"></div>
+            <div class="g" style="width:16px;height:16px"></div>
+            <div class="g" style="width:12px;height:12px"></div>
+            <div class="g" style="width:15px;height:15px"></div>
+            <div class="g" style="width:10px;height:10px"></div>
+          </div></div>
+        </div>
+        <div class="stack-row">
+          <div class="label">Sand</div>
+          <div class="grain-track"><div class="grains">
+            <div class="g" style="width:4px;height:4px"></div>
+            <div class="g" style="width:5px;height:5px"></div>
+            <div class="g" style="width:3px;height:3px"></div>
+            <div class="g" style="width:4px;height:4px"></div>
+            <div class="g" style="width:5px;height:5px"></div>
+            <div class="g" style="width:3px;height:3px"></div>
+            <div class="g" style="width:4px;height:4px"></div>
+            <div class="g" style="width:3px;height:3px"></div>
+          </div></div>
+        </div>
+        <div class="stack-row">
+          <div class="label">Soft stone</div>
+          <div class="grain-track"><div class="grains">
+            <div class="g" style="width:20px;height:20px"></div>
+            <div class="g" style="width:17px;height:17px"></div>
+            <div class="g" style="width:19px;height:19px"></div>
+          </div></div>
+        </div>
+        <div class="stack-row">
+          <div class="label">Dust</div>
+          <div class="grain-track"><div class="grains">
+            <div class="g" style="width:2px;height:2px"></div>
+            <div class="g" style="width:2px;height:2px"></div>
+            <div class="g" style="width:1px;height:1px"></div>
+            <div class="g" style="width:2px;height:2px"></div>
+            <div class="g" style="width:1px;height:1px"></div>
+            <div class="g" style="width:2px;height:2px"></div>
+            <div class="g" style="width:1px;height:1px"></div>
+            <div class="g" style="width:2px;height:2px"></div>
+            <div class="g" style="width:1px;height:1px"></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="materials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="num">01 — Our range</span>
+        <h2>Five materials, one yard.</h2>
+      </div>
+      <p>Every load is graded before it leaves the yard. Tell us the job and we'll tell you the material.</p>
+    </div>
+
+    <div class="products">
+      <div class="pcard">
+        <div class="idx">MAT.01</div>
+        <div class="swatch tex-stones"></div>
+        <h3>Stones</h3>
+        <p class="use">Coarse aggregate for foundations, hardcore filling and heavy structural work.</p>
+        <div class="spec"><span>Grade: Coarse</span><span>Sold by: Ton / Lorry</span></div>
+      </div>
+
+      <div class="pcard">
+        <div class="idx">MAT.02</div>
+        <div class="swatch tex-ballast"></div>
+        <h3>Ballast</h3>
+        <p class="use">Mixed stone for concrete work, slabs, driveways and general construction.</p>
+        <div class="spec"><span>Grade: Mixed</span><span>Sold by: Ton / Lorry</span></div>
+      </div>
+
+      <div class="pcard">
+        <div class="idx">MAT.03</div>
+        <div class="swatch tex-sand"></div>
+        <h3>Sand</h3>
+        <p class="use">Clean building sand for plastering, blockwork, screeding and mortar.</p>
+        <div class="spec"><span>Grade: Fine</span><span>Sold by: Ton / Lorry</span></div>
+      </div>
+
+      <div class="pcard">
+        <div class="idx">MAT.04</div>
+        <div class="swatch tex-softstone"></div>
+        <h3>Soft stone</h3>
+        <p class="use">Workable walling stone for masonry, boundary walls and cladding.</p>
+        <div class="spec"><span>Grade: Medium</span><span>Sold by: Piece / Lorry</span></div>
+      </div>
+
+      <div class="pcard">
+        <div class="idx">MAT.05</div>
+        <div class="swatch tex-dust"></div>
+        <h3>Dust</h3>
+        <p class="use">Fine quarry dust for backfilling, leveling and compaction beds.</p>
+        <div class="spec"><span>Grade: Fine</span><span>Sold by: Ton / Lorry</span></div>
+      </div>
+
+      <div class="pcard">
+        <div class="idx">MAT.06</div>
+        <div class="swatch" style="background:linear-gradient(135deg, var(--quarry) 0%, var(--quarry-2) 100%); display:flex; align-items:center; justify-content:center;">
+          <span class="mono" style="color:var(--stone); font-size:12px; text-transform:uppercase; letter-spacing:.1em; text-align:center; padding:0 16px;">Bulk &amp; custom orders on request</span>
+        </div>
+        <h3>Bulk orders</h3>
+        <p class="use">Large or mixed-load orders for contractors, put together to your site plan.</p>
+        <div class="spec"><span>Grade: Custom</span><span>Sold by: Enquiry</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap strip-inner">
+    <div class="strip-item"><div class="n">05</div><div class="l">Materials stocked</div></div>
+    <div class="strip-item"><div class="n">T</div><div class="l">Sold by the ton</div></div>
+    <div class="strip-item"><div class="n">&#9906;</div><div class="l">Site delivery</div></div>
+    <div class="strip-item"><div class="n">&#9878;</div><div class="l">Graded on site</div></div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="num">02 — Process</span>
+        <h2>From enquiry to offload.</h2>
+      </div>
+      <p>Three steps, no back-and-forth. We keep it that simple on purpose.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="sn">STEP 01</div>
+        <h3>Tell us the job</h3>
+        <p>Send the material, quantity and site location — by phone, WhatsApp or the form below.</p>
+      </div>
+      <div class="step">
+        <div class="sn">STEP 02</div>
+        <h3>Get a price</h3>
+        <p>We confirm quantity, price per ton and the delivery window, same day where possible.</p>
+      </div>
+      <div class="step">
+        <div class="sn">STEP 03</div>
+        <h3>We deliver</h3>
+        <p>Lorry arrives at your site, offloads, and you're building — no middlemen, no delays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap section contact-inner" style="padding:96px 0;">
+    <div>
+      <span class="num" style="color:var(--dust-gold)">03 — Get in touch</span>
+      <h2>Request a quote.</h2>
+      <p class="lede">Let us know what material and how much you need — we'll come back with a price and a delivery slot.</p>
+
+      <div class="contact-row">
+        <div class="k">Phone</div>
+        <div class="v">Add your number here<small>Edit this in the HTML file</small></div>
+      </div>
+      <div class="contact-row">
+        <div class="k">WhatsApp</div>
+        <div class="v">Add your WhatsApp number<small>Shown as a click-to-chat link</small></div>
+      </div>
+      <div class="contact-row">
+        <div class="k">Location</div>
+        <div class="v">Add your yard / delivery area<small>e.g. town, county, service radius</small></div>
+      </div>
+      <div class="contact-row">
+        <div class="k">Hours</div>
+        <div class="v">Add your operating hours</div>
+      </div>
+    </div>
+
+    <div>
+      <form onsubmit="return false;">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="material">Material needed</label>
+          <select id="material">
+            <option>Stones</option>
+            <option>Ballast</option>
+            <option>Sand</option>
+            <option>Soft stone</option>
+            <option>Dust</option>
+            <option>Mixed / not sure</option>
+          </select>
+        </div>
+        <div>
+          <label for="qty">Quantity (tons / lorries)</label>
+          <input id="qty" type="text" placeholder="e.g. 2 lorries">
+        </div>
+        <div>
+          <label for="loc">Delivery location</label>
+          <input id="loc" type="text" placeholder="Site address or area">
+        </div>
+        <div>
+          <label for="msg">Notes</label>
+          <textarea id="msg" placeholder="Anything else we should know"></textarea>
+        </div>
+        <button type="submit">Send request</button>
+        <div class="edit-note">This form doesn't send anywhere yet — connect it to WhatsApp, email or a form service. Ask if you'd like help with that.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Joska Building Materials</div>
+    <div>&#169; <span id="year"></span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
